@@ -528,8 +528,8 @@ vector<int> HKPBC:: serial(vector<vector<int>> &niegh, vector<vector<int>> &tota
 								});
 
 	// cout<<"x: "<<x<<endl;
-	int clusters[x+1] = {0};
-	int clus[x];
+	vector<int> clusters(x+1, 0);
+	vector<int> clus;
 	for(int j=0; j<total.size(); j++)
 	{
 		for(int i=0;i<(Lx*Ly);i++)
@@ -546,7 +546,7 @@ vector<int> HKPBC:: serial(vector<vector<int>> &niegh, vector<vector<int>> &tota
 
 	// cout<<endl;
 
-	copy(clusters + 1, clusters + x +1, clus);
+	copy(clusters.begin() + 1, clusters.end(), back_inserter(clus));
 
 	// int nn = sizeof(clus)/sizeof(clus[0]);
 	// cout<<"nn: "<<nn<<endl;
